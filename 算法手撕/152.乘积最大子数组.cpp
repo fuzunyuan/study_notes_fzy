@@ -34,3 +34,25 @@ public:
     }
 };
 */
+// 2. 解法二：一般在面试的过程中会对一个问题进行升级提问：
+// 直接借用中间变量来记录，大大减小空间复杂度
+/*
+class Solution {
+public:
+    int maxProduct(vector<int>& nums) {
+        int maxF = nums[0], minF = nums[0],ans = nums[0];
+        for (int i = 1; i < nums.size(); i++) {
+            int temp_max = maxF, temp_min = minF; 
+            maxF = max(nums[i] * temp_max, max(nums[i] * temp_min, nums[i]));
+            minF = min(nums[i] * temp_min, min(nums[i] * temp_max, nums[i]));
+            if (minF < INT_MIN) {
+                minF = INT_MIN;
+            }
+            ans = max(maxF, ans);
+        }
+
+        return ans;
+    }
+};
+
+*/
