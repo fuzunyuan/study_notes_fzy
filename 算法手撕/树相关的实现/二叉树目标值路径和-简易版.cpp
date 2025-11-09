@@ -17,11 +17,10 @@ class Solution {
 public:
     vector<vector<int>> pathTarget(TreeNode* root, int target) {
         pathFind(root, target);
-
         return result;
     }
 private:
-    // 这道题目用的是递归 + 回溯
+    // 这道题目用的是DFS + 回溯
     vector<vector<int>> result;
     vector<int> path;
 
